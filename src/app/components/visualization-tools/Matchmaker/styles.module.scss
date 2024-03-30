@@ -1,0 +1,18 @@
+
+@mixin teamBubble {
+  display: inline-block;
+  border-radius: 2rem;
+  padding: 0 0.4rem;
+}
+
+.redTeam {
+  @include teamBubble;
+  background-color: #e85c5c;
+  color: white;
+}
+
+.blueTeam {
+  @include teamBubble;
+  background-color: #5d5dd3;
+  color: white;
+}

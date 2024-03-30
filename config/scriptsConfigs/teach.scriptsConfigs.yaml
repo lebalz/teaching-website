@@ -67,3 +67,5 @@ creative-corner:
       material: /structure/script-landing-pages/creative-corner.mdx
     - section: 01-Komponentengalerie
       material: Components-Gallery
+    - section: 02-Matchmaker.mdx
+      material: Tools/Matchmaker.mdx
