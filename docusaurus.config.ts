@@ -6,7 +6,9 @@ import * as osPath from "path";
 import {loadConfigForActiveSite} from "./src/framework/builder/site-config-loader";
 import {Log} from "./src/framework/util/log";
 import {buildScripts} from "./src/framework/builder/scripts-builder";
-import {remarkContainerDirectivesConfig} from "./src/framework/plugin-configs/remark-container-directives/plugin-config";
+import {
+  remarkContainerDirectivesConfig
+} from "./src/framework/plugin-configs/remark-container-directives/plugin-config";
 import remarkContainerDirectives from "./src/framework/plugins/remark-container-directives/plugin";
 import remarkLineDirectives from "./src/framework/plugins/remark-line-directives/plugin";
 import {remarkLineDirectivesPluginConfig} from "./src/framework/plugin-configs/remark-line-directives/plugin-config";
@@ -47,6 +49,10 @@ const docsConfigs = scriptRoots.map((scriptRoot, index) => {
 });
 
 const config: Config = {
+  future: {
+    experimental_router: 'hash',
+  },
+
   title: siteConfig.properties.pageTitle,
   tagline: siteConfig.properties.tagline,
   favicon: 'img/favicon.ico',
@@ -87,7 +93,7 @@ const config: Config = {
 
   plugins: [
     'docusaurus-plugin-sass',
-    function (context: LoadContext, options: PluginOptions){
+    function (context: LoadContext, options: PluginOptions) {
       return {
         name: 'configure-watch-paths',
         getPathsToWatch() {
